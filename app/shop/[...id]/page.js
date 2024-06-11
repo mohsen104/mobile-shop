@@ -115,7 +115,7 @@ function page({ params }) {
                     </div>
                     <div className='flex flex-col items-center justify-center w-full gap-2 text-center py-4 px-6 border-dashed border-blue border-2 bg-blue/10 rounded-lg'>
                         <p className='text-blue'>لینک کوتاه</p>
-                        <p className='text-blue'>mobile-shop-rust.vercel.app/?p={el.id}</p>
+                        <p className='text-blue font-medium'>mobile-shop-rust.vercel.app/?p={el.id}</p>
                     </div>
                 </div>
             </div>
