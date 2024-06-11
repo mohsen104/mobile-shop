@@ -1,8 +1,9 @@
 import Breadcrump from '@/components/modules/Breadcrump'
 import Products from '@/components/templates/Home/Products'
-import React from 'react'
+import React, { Suspense } from 'react'
 import data from '@/data/mobile.json'
 import Sort from '@/components/modules/Sort'
+import Loading from '../loading'
 
 function page({ searchParams }) {
 
@@ -56,7 +57,9 @@ function page({ searchParams }) {
             <Breadcrump level="1" />
             <div className='w-full'>
                 <div className='w-full flex flex-col gap-10'>
-                    <Sort countEl={dataSorted.length} />
+                    <Suspense>
+                        <Sort countEl={dataSorted.length} />
+                    </Suspense>
                     <Products data={dataSorted} />
                 </div>
             </div>
