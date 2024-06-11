@@ -1,5 +1,6 @@
 import "./globals.css";
 import Footer from "@/components/modules/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata = {
   title: "Create Next App",
@@ -12,6 +13,7 @@ export default function RootLayout({ children }) {
       <body>
         {children}
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
