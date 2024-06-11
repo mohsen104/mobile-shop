@@ -35,7 +35,7 @@ function Navbar() {
             <div className='flex flex-row items-center justify-between py-5 container mb-6 max-sm:px-4'>
                 <div className='flex flex-row items-center gap-4 max-sm:flex-col max-sm:w-full max-sm:gap-3'>
                     <Link href="/"><Image alt='logo' src="/images/logo.svg" width={145} height={45} quality={100} /></Link>
-                    <div className='bg-gray px-2 py-2 rounded-md flex flex-row items-center gap-4'>
+                    <div className='bg-gray px-2 py-2 rounded-md flex flex-row items-center gap-4 max-sm:w-full'>
                         <IoSearch size={24} className='opacity-40 cursor-pointer' onClick={() => searchFetch()} />
                         <input
                             onKeyPress={(event) => searchHandler(event)}

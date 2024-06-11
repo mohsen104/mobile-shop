@@ -32,7 +32,7 @@ function Sort({ countEl }) {
         <div className='flex flex-row items-center justify-between border-b-1 border-b-gray pb-2.5'>
             <div className='flex flex-row items-center gap-2'>
                 <IoFilter size={24} />
-                <select id="" className='focus:outline-none pl-5' defaultValue={0} onChange={(event) => setSort(event.target.value)}>
+                <select id="" className='focus:outline-none pl-5 bg-white' defaultValue={0} onChange={(event) => setSort(event.target.value)}>
                     <option value="0">پربازدید ترین</option>
                     <option value="1">پرفروش ترین</option>
                     <option value="2">ارزان ترین</option>
