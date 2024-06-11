@@ -67,50 +67,56 @@ function page({ params }) {
                         </div>
                     </div>
                 </div>
-                <div className='flex flex-col rounded-lg bg-gray px-4 py-8 h-fit'>
-                    <div className='flex flex-col items-start gap-2'>
-                        <p className='font-bold text-lg'>فروشنده</p>
-                        <div className='flex flex-row items-center gap-4'>
-                            <BsShopWindow size={20} className='text-green' />
-                            <p className='font-medium'>پایاگستر شهر</p>
-                            <p className='text-sm text-blue'>متخب</p>
+                <div className='flex flex-col gap-6'>
+                    <div className='flex flex-col rounded-lg bg-gray px-4 py-8 h-fit'>
+                        <div className='flex flex-col items-start gap-2'>
+                            <p className='font-bold text-lg'>فروشنده</p>
+                            <div className='flex flex-row items-center gap-4'>
+                                <BsShopWindow size={20} className='text-green' />
+                                <p className='font-medium'>پایاگستر شهر</p>
+                                <p className='text-sm text-blue'>متخب</p>
+                            </div>
+                            <p className='text-sm opacity-50 mr-9'>
+                                ۸۲% رضایت از کالا عملکرد عالی
+                            </p>
                         </div>
-                        <p className='text-sm opacity-50 mr-9'>
-                            ۸۲% رضایت از کالا عملکرد عالی
-                        </p>
-                    </div>
-                    <span className='w-full h-[1px] bg-black opacity-10 mt-2 mb-4'></span>
-                    <div className='flex flex-row items-center justify-between'>
-                        {
-                            el.discount !== 0
-                                ?
-                                <div className='bg-red flex flex-row items-center gap-1 rounded-full w-fit px-2 py-0.5 text-white'>
-
-                                    <RiDiscountPercentLine size={20} />
-                                    {el.discount}
-                                </div>
-                                :
-                                <div></div>
-                        }
-                        <div className='flex flex-row items-center justify-end gap-1 mt-2 font-semibold'>
+                        <span className='w-full h-[1px] bg-black opacity-10 mt-2 mb-4'></span>
+                        <div className='flex flex-row items-center justify-between'>
                             {
                                 el.discount !== 0
                                     ?
-                                    <div className='flex flex-row items-center'>
-                                        <del className='ml-2 text-sm opacity-50'>{new Intl.NumberFormat().format(el.price)}</del>
-                                        <p>{new Intl.NumberFormat().format(el.price - ((el.price * el.discount) / 100))}</p>
+                                    <div className='bg-red flex flex-row items-center gap-1 rounded-full w-fit px-2 py-0.5 text-white'>
+
+                                        <RiDiscountPercentLine size={20} />
+                                        {el.discount}
                                     </div>
                                     :
-                                    <p>{new Intl.NumberFormat().format(el.price)}</p>
+                                    <div></div>
                             }
-                            <p className='text-sm'>تومان</p>
+                            <div className='flex flex-row items-center justify-end gap-1 mt-2 font-semibold'>
+                                {
+                                    el.discount !== 0
+                                        ?
+                                        <div className='flex flex-row items-center'>
+                                            <del className='ml-2 text-sm opacity-50'>{new Intl.NumberFormat().format(el.price)}</del>
+                                            <p>{new Intl.NumberFormat().format(el.price - ((el.price * el.discount) / 100))}</p>
+                                        </div>
+                                        :
+                                        <p>{new Intl.NumberFormat().format(el.price)}</p>
+                                }
+                                <p className='text-sm'>تومان</p>
+                            </div>
                         </div>
+                        <div className='flex flex-row items-center gap-4 my-4'>
+                            <CgCheckO size={20} className='text-blue' />
+                            <p className='text-sm'>گارانتی ۱۸ ماهه مدیا پردازش</p>
+                        </div>
+                        <button className='w-full rounded-lg bg-red text-white text-sm py-3'>افزودن به سبد خرید</button>
                     </div>
-                    <div className='flex flex-row items-center gap-4 my-4'>
-                        <CgCheckO size={20} className='text-blue' />
-                        <p className='text-sm'>گارانتی ۱۸ ماهه مدیا پردازش</p>
+                    <div className='flex flex-col items-center justify-center w-full gap-2 text-center py-4 px-6 border-dashed border-blue border-2 bg-blue/10 rounded-lg'>
+                        <p className='text-blue'>لینک کوتاه</p>
+                        <p className='text-blue'>mobile-shop-rust.vercel.app/?p={el.id}</p>
                     </div>
-                    <button className='w-full rounded-lg bg-red text-white text-sm py-3'>افزودن به سبد خرید</button>
                 </div>
             </div>
             <div className='flex flex-col items-start'>

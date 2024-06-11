@@ -16,7 +16,7 @@ function Footer() {
                 <ToTop />
             </div>
 
-            <div className='flex flex-row items-center gap-4 text-sm opacity-80 max-sm:gap-2'>
+            <div className='flex flex-row items-center gap-4 text-sm opacity-80 max-sm:gap-2 max-sm:justify-between max-sm:mt-2'>
                 <p>تلفن پشتیبانی ۶۱۹۳۰۰۰۰ - ۰۲۱</p>
                 <span className='h-6 bg-gray w-[1px]'></span>
                 <p>۰۲۱-۹۱۰۰۰۱۰۰</p>
