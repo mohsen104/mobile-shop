@@ -3,7 +3,6 @@ import Products from '@/components/templates/Home/Products'
 import React, { Suspense } from 'react'
 import data from '@/data/mobile.json'
 import Sort from '@/components/modules/Sort'
-import Loading from '../loading'
 
 function page({ searchParams }) {
 
