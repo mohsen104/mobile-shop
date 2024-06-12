@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 function Product(props) {
     return (
-        <Link href={`/shop/${props.id}`} className='w-full flex flex-col items-center gap-2 p-4 transition-all hover:shadow-lg'>
+        <Link data-aos="fade-up" href={`/shop/${props.id}`} className='w-full flex flex-col items-center gap-2 p-4 transition-all hover:shadow-lg'>
             <Image alt="image" src={`/images/${props.id}.webp`} width={240} height={240} quality={100} />
             <div className='flex flex-col gap-1'>
                 <div className='bg-gray flex flex-row items-center gap-1 rounded-full w-fit px-2 py-0.5'>
