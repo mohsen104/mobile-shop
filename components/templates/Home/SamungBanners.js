@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-function SAMS() {
+function SamungBanners() {
     return (
         <div className='grid grid-cols-2 gap-10 max-sm:gap-3 max-sm:grid-cols-1'>
             <Link href={"/shop?q=سامسونگ"} className='row-start-1 col-span-1'>
@@ -15,4 +15,4 @@ function SAMS() {
     )
 }
 
-export default SAMS
+export default SamungBanners

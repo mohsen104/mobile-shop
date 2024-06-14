@@ -7,7 +7,7 @@ function Breadcrump({ level }) {
             <Link href="/"><p>صفحه اصلی</p></Link>
             <p>/</p>
             {
-                level == "1"
+                level == "shop"
                     ?
                     <p className='text-blue'>فروشگاه</p>
                     :

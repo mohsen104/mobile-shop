@@ -1,6 +1,6 @@
 import Brands from "@/components/templates/Home/Brands";
 import Header from "@/components/templates/Home/Header";
-import SAMS from "@/components/templates/Home/SAMS";
+import SamungBanners from "@/components/templates/Home/SamungBanners";
 import Products from "@/components/templates/Home/Products";
 import SectionBrands from "@/components/templates/Home/SectionBrands";
 import { AiOutlineProduct } from "react-icons/ai";
@@ -24,7 +24,7 @@ export default function Home() {
         <Products data={dataMain} />
       </div>
       <Brands />
-      <SAMS />
+      <SamungBanners />
     </div>
   );
 }

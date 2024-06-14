@@ -21,7 +21,6 @@ function page({ searchParams }) {
         case "3":
             dataSorted.sort((a, b) => b.price - a.price);
             break;
-
         default:
             dataSorted.sort((a, b) => a.id - b.id);
             break;
@@ -29,31 +28,13 @@ function page({ searchParams }) {
 
     const regex = new RegExp(`${searchParams.q ?? ""}`);
 
-
-    const dataSortedFinal = dataSorted.filter(el => {
-        if (regex.test(el.title.toLowerCase())) {
-            return el;
-        } else {
-            return false;
-        }
+    dataSorted = dataSorted.filter(item => {
+        if (regex.test(item.title.toLowerCase()) || regex.test(item.keywords.toLowerCase())) return item;
     })
-
-    if (dataSortedFinal.length == 0) {
-        dataSorted = dataSorted.filter(el => {
-            if (regex.test(el.keywords.toLowerCase())) {
-                return el;
-            } else {
-                return false;
-            }
-        })
-    } else {
-        dataSorted = dataSortedFinal;
-    }
-
 
     return (
         <div className='container flex flex-col gap-8 max-sm:px-4'>
-            <Breadcrump level="1" />
+            <Breadcrump level="shop" />
             <div className='w-full'>
                 <div className='w-full flex flex-col gap-10'>
                     <Suspense>

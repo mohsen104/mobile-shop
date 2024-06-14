@@ -17,8 +17,8 @@ function Product(props) {
                 <p className='font-medium text-sm leading-loose h-[84px]'>{props.title}</p>
                 <div className='flex flex-row-reverse items-center text-yellow'>
                     {
-                        new Array(Math.floor(props.rate)).fill(undefined).map(el => (
-                            <IoStar />
+                        new Array(Math.floor(props.rate)).fill(undefined).map((el, index) => (
+                            <IoStar key={index} />
                         ))
                     }
                     {
@@ -27,8 +27,8 @@ function Product(props) {
                             : <IoStarOutline />
                     }
                     {
-                        new Array(4 - Math.floor(props.rate)).fill(undefined).map(props => (
-                            <IoStarOutline />
+                        new Array(4 - Math.floor(props.rate)).fill(undefined).map((el, index) => (
+                            <IoStarOutline key={index} />
                         ))
                     }
                     <p className='ml-2 mt-1 text-black text-sm'>{props.rate}</p>

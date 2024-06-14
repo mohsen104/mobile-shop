@@ -1,7 +1,6 @@
 "use client"
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { NextResponse } from 'next/server';
-import React, { useCallback, useState } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation';
+import React, { useState } from 'react'
 import { IoFilter } from 'react-icons/io5'
 
 function Sort({ countEl }) {
@@ -12,18 +11,17 @@ function Sort({ countEl }) {
 
     switch (sort) {
         case "0":
-            router.push(`/shop?q=${searchParams.get("q") ?? ""}&sort=0`);
+            router.push(`/shop?q=${searchParams.get("q") ?? ""}&sort=0`)
             break;
         case "1":
-            router.push(`/shop?q=${searchParams.get("q") ?? ""}&sort=1`);
+            router.push(`/shop?q=${searchParams.get("q") ?? ""}&sort=1`)
             break;
         case "2":
-            router.push(`/shop?q=${searchParams.get("q") ?? ""}&sort=2`);
+            router.push(`/shop?q=${searchParams.get("q") ?? ""}&sort=2`)
             break;
         case "3":
-            router.push(`/shop?q=${searchParams.get("q") ?? ""}&sort=3`);
+            router.push(`/shop?q=${searchParams.get("q") ?? ""}&sort=3`)
             break;
-
         default:
             break;
     }
