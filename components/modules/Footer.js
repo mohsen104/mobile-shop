@@ -43,13 +43,13 @@ function Footer() {
                     <p className='opacity-60 text-sm'>حریم خصوصی</p>
                     <p className='opacity-60 text-sm'>گزارش باگ</p>
                 </div>
-                <div className='flex flex-col items-start gap-2'>
+                <div className='flex flex-col items-start gap-2 col-span-2'>
                     <p className='font-semibold pb-4 max-sm:pb-1'>راهنمای خرید از موبایل‌شاپ</p>
                     <p className='opacity-60 text-sm'>نحوه ثبت سفارش</p>
                     <p className='opacity-60 text-sm'>رویه ارسال سفارش</p>
                     <p className='opacity-60 text-sm'>شیوه‌های پرداخت</p>
                 </div>
-                <div className='flex flex-col items-start gap-2'>
+                <div className='flex flex-col items-start gap-2 col-span-2'>
                     <p className='font-semibold pb-4 max-sm:pb-1'>همراه ما باشید!</p>
                     <div className='flex flex-row items-center gap-5 opacity-40 text-sm'>
                         <SiInstagram size={32} />

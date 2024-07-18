@@ -3,7 +3,7 @@ import Product from '@/components/modules/Product';
 
 function Products({ data }) {
     return (
-        <div className='grid grid-cols-3 max-md:grid-cols-2 max-sm:gap-2 max-sm:grid-cols-2'>
+        <div className='grid grid-cols-3 max-md:grid-cols-2 max-sm:gap-2 max-sm:grid-cols-1'>
             {
                 data.length == 0
                     ?

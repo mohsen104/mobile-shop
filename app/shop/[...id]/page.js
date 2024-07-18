@@ -8,6 +8,7 @@ import { CgCheckO } from "react-icons/cg";
 import { BsShopWindow } from "react-icons/bs";
 import Products from '@/components/templates/Home/Products';
 import AddToCart from '@/components/modules/AddToCart';
+import data from '@/data/mobile.json'
 
 export function generateMetadata({ params }) {
     const el = data.find((item) => item.id == params.id)

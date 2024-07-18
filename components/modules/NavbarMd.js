@@ -5,7 +5,7 @@ import { IoClose, IoMenu } from 'react-icons/io5'
 import { MdOutlineAccountCircle } from 'react-icons/md';
 import { RiShoppingCartLine } from 'react-icons/ri';
 
-export default function NavbarMd({itemsCounter}) {
+export default function NavbarMd({ itemsCounter }) {
     const [menu, setMenu] = useState(true);
     const isShow = () => setMenu(true);
     const isHide = () => setMenu(false);
@@ -40,13 +40,13 @@ export default function NavbarMd({itemsCounter}) {
                                     <p className="bg-red text-white text-center rounded-full border-1 border-white w-5 h-5 text-sm absolute -top-2 -right-2">{itemsCounter}</p>
                                 </Link>
                             </div>
-                            <Link href="/" className='hover:text-red hover:bg-gray/50 w-full p-2.5 bg-white rounded-lg'>
+                            <Link href="/" onClick={closeMenu} className='hover:text-red hover:bg-gray/50 w-full p-2.5 bg-white rounded-lg'>
                                 صفحه اصلی
                             </Link>
-                            <Link href="/shop" className='hover:text-red hover:bg-gray/50 w-full p-2.5 bg-white rounded-lg'>
+                            <Link href="/shop" onClick={closeMenu} className='hover:text-red hover:bg-gray/50 w-full p-2.5 bg-white rounded-lg'>
                                 فروشگاه
                             </Link>
-                            <Link href="/aboutus" className='hover:text-red hover:bg-gray/50 w-full p-2.5 bg-white rounded-lg'>
+                            <Link href="/aboutus" onClick={closeMenu} className='hover:text-red hover:bg-gray/50 w-full p-2.5 bg-white rounded-lg'>
                                 درباره ما
                             </Link>
                         </div>
