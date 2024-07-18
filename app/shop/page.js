@@ -6,7 +6,7 @@ import InputSearch from '@/components/modules/InputSearch';
 
 async function page({ searchParams }) {
 
-    const res = await fetch("http://localhost:3000/api/products", { cache: 'force-cache' });
+    const res = await fetch("https://mobile-shop-rust.vercel.app/api/products", { cache: 'force-cache' });
     const { data } = await res.json();
 
     let dataSorted = data;

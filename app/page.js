@@ -7,7 +7,7 @@ import { AiOutlineProduct } from "react-icons/ai";
 import Link from 'next/link';
 
 export default async function Home() {
-  const res = await fetch("http://localhost:3000/api/products", { cache: 'force-cache' });
+  const res = await fetch("https://mobile-shop-rust.vercel.app/api/products", { cache: 'force-cache' });
   const { data } = await res.json();
 
   const dataFinal = data.sort((a, b) => b.rate - a.rate).slice(0, 6);
