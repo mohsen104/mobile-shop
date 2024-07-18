@@ -1,5 +1,4 @@
 import React from 'react'
-import data from '@/data/mobile.json'
 import Image from 'next/image';
 import Breadcrump from '@/components/modules/Breadcrump';
 import { IoStar, IoStarHalf, IoStarOutline } from 'react-icons/io5';

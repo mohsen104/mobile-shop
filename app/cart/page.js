@@ -1,7 +1,6 @@
 "use client"
-import React, { useRef } from 'react'
+import React from 'react'
 import { useEffect, useState } from 'react'
-import data from '@/data/mobile.json'
 import RowCart from '@/components/modules/RowCart';
 import { toast } from 'react-toastify';
 import discount from '@/data/discount.json'

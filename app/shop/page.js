@@ -1,13 +1,11 @@
 import Breadcrump from '@/components/modules/Breadcrump'
 import Products from '@/components/templates/Home/Products'
-import React, { Suspense } from 'react'
+import React from 'react'
 import Sort from '@/components/modules/Sort'
 import InputSearch from '@/components/modules/InputSearch';
+import data from '@/data/mobile.json'
 
 async function page({ searchParams }) {
-
-    const res = await fetch("https://mobile-shop-rust.vercel.app/api/products", { cache: 'force-cache' });
-    const { data } = await res.json();
 
     let dataSorted = data;
 
@@ -43,9 +41,7 @@ async function page({ searchParams }) {
             </div>
             <div className='w-full'>
                 <div className='w-full flex flex-col gap-10'>
-                    <Suspense>
-                        <Sort countEl={dataSorted.length} />
-                    </Suspense>
+                    <Sort countEl={dataSorted.length} />
                     <Products data={dataSorted} />
                 </div>
             </div>
