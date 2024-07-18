@@ -19,7 +19,7 @@
 @media not all and (min-width: 640px) {
     .mySwiper2 {
         width: 100%;
-        height: fit-content;
+        height: 20vh;
         padding: 8px 0;
     }
 
@@ -34,8 +34,8 @@
 
     .mySwiper2 .swiper-slide img {
         display: block;
-        width: 58px;
-        height: 40px;
-        object-fit: contain;
+        height: fit-content;
+        width: fit-content;
+        object-fit: cover;
     }
 }

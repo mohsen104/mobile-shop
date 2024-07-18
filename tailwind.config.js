@@ -22,7 +22,7 @@ module.exports = {
       },
       borderWidth: {
         1: "1px"
-      }
+      },
     },
   },
   plugins: [],

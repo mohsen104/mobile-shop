@@ -14,7 +14,7 @@ function Breadcrump({ level }) {
                     <>
                         <Link href="/shop"><p>فروشگاه</p></Link>
                         <p>/</p>
-                        <Link href={`/shop?q=${level}`}><p className='text-blue'>[ {level} ]</p></Link>
+                        <p className='text-blue'>{level}</p>
                     </>
             }
         </div>

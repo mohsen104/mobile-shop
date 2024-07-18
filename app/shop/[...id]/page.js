@@ -8,6 +8,7 @@ import { RiDiscountPercentLine } from 'react-icons/ri';
 import { CgCheckO } from "react-icons/cg";
 import { BsShopWindow } from "react-icons/bs";
 import Products from '@/components/templates/Home/Products';
+import AddToCart from '@/components/modules/AddToCart';
 
 export function generateMetadata({ params }) {
     const el = data.find((item) => item.id == params.id)
@@ -25,13 +26,13 @@ function page({ params }) {
     return (
         <div className='container flex flex-col gap-8 max-sm:px-4'>
             <Breadcrump level={el.brand} />
-            <div className='grid grid-cols-3 max-sm:grid-cols-1 gap-6'>
-                <Image data-aos="zoom-in" alt="image" src={`/images/${el.id}.webp`} width={480} height={480} quality={100} />
+            <div className='grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-6'>
+                <Image data-aos="zoom-in" alt="image" src={`/images/${el.id}.webp`} width={480} height={480} />
                 <div data-aos="zoom-in" className='flex flex-col gap-4'>
                     <p className='leading-loose font-semibold'>{el.title}</p>
                     <div className='flex flex-row-reverse items-center text-yellow border-b-1 border-b-gray pb-4'>
                         {
-                            new Array(Math.floor(el.rate)).fill(undefined).map((el,index) => (
+                            new Array(Math.floor(el.rate)).fill(undefined).map((el, index) => (
                                 <IoStar key={index} />
                             ))
                         }
@@ -41,7 +42,7 @@ function page({ params }) {
                                 : <IoStarOutline />
                         }
                         {
-                            new Array(4 - Math.floor(el.rate)).fill(undefined).map((el,index) => (
+                            new Array(4 - Math.floor(el.rate)).fill(undefined).map((el, index) => (
                                 <IoStarOutline key={index} />
                             ))
                         }
@@ -54,7 +55,7 @@ function page({ params }) {
                         </div>
                         <div className='flex flex-col gap-2.5'>
                             {
-                                el.specifications.map((q,index) => (
+                                el.specifications.map((q, index) => (
                                     <div key={index} className='p-1.5 rounded-lg bg-gray flex flex-col gap-1'>
                                         <p className='text-[12px] text-black opacity-50'>{q.question}</p>
                                         <p className='font-semibold'>{q.answer}</p>
@@ -64,7 +65,7 @@ function page({ params }) {
                         </div>
                     </div>
                 </div>
-                <div data-aos="zoom-in" className='flex flex-col gap-6'>
+                <div data-aos="zoom-in" className='flex flex-col gap-6 max-md:col-span-2 max-sm:col-span-1'>
                     <div className='flex flex-col rounded-lg bg-gray px-4 py-8 h-fit'>
                         <div className='flex flex-col items-start gap-2'>
                             <p className='font-bold text-lg'>فروشنده</p>
@@ -108,7 +109,7 @@ function page({ params }) {
                             <CgCheckO size={20} className='text-blue' />
                             <p className='text-sm'>گارانتی ۱۸ ماهه مدیا پردازش</p>
                         </div>
-                        <button className='w-full rounded-lg bg-red text-white text-sm py-3'>افزودن به سبد خرید</button>
+                        <AddToCart data={el} />
                     </div>
                     <div className='flex flex-col items-center justify-center w-full gap-2 text-center py-4 px-6 border-dashed border-blue border-2 bg-blue/10 rounded-lg'>
                         <p className='text-blue'>لینک کوتاه</p>

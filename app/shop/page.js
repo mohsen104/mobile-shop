@@ -1,10 +1,13 @@
 import Breadcrump from '@/components/modules/Breadcrump'
 import Products from '@/components/templates/Home/Products'
 import React, { Suspense } from 'react'
-import data from '@/data/mobile.json'
 import Sort from '@/components/modules/Sort'
+import InputSearch from '@/components/modules/InputSearch';
 
-function page({ searchParams }) {
+async function page({ searchParams }) {
+
+    const res = await fetch("http://localhost:3000/api/products", { cache: 'force-cache' });
+    const { data } = await res.json();
 
     let dataSorted = data;
 
@@ -34,7 +37,10 @@ function page({ searchParams }) {
 
     return (
         <div className='container flex flex-col gap-8 max-sm:px-4'>
-            <Breadcrump level="shop" />
+            <div className='flex flex-row max-md:flex-col max-md:items-start justify-between items-center gap-6'>
+                <Breadcrump level="shop" />
+                <InputSearch />
+            </div>
             <div className='w-full'>
                 <div className='w-full flex flex-col gap-10'>
                     <Suspense>

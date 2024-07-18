@@ -10,6 +10,7 @@ import Image from 'next/image';
 function Header() {
     return (
         <Swiper
+            lazy={true}
             style={{
                 "--swiper-pagination-bullet-width": "8px",
                 "--swiper-pagination-bullet-height": "8px",
@@ -24,17 +25,14 @@ function Header() {
                 disableOnInteraction: false,
             }}
             pagination={true} modules={[Autoplay, Pagination]} className="mySwiper">
-            <SwiperSlide>
-                <Image alt="banner" src="/images/banner-samsung2.webp" width={2880} height={600} quality={100} className='rounded-md' ></Image>
+            <SwiperSlide className='cursor-pointer'>
+                <Image alt="banner" src="/images/banner-samsung2.webp" width={2880} height={600} className='rounded-md' ></Image>
             </SwiperSlide>
-            <SwiperSlide>
-                <Image alt="banner" src="/images/banner-samsung3.webp" width={2880} height={600} quality={100} className='rounded-md' ></Image>
+            <SwiperSlide className='cursor-pointer'>
+                <Image alt="banner" src="/images/banner-samsung3.webp" width={2880} height={600} className='rounded-md' ></Image>
             </SwiperSlide>
-            <SwiperSlide>
-                <Image alt="banner" src="/images/banner-samsung7.webp" width={2880} height={600} quality={100} className='rounded-md' ></Image>
-            </SwiperSlide>
-            <SwiperSlide>
-                <Image alt="banner" src="/images/banner-samsung8.webp" width={2880} height={600} quality={100} className='rounded-md' ></Image>
+            <SwiperSlide className='cursor-pointer'>
+                <Image alt="banner" src="/images/banner-samsung7.webp" width={2880} height={600} className='rounded-md' ></Image>
             </SwiperSlide>
         </Swiper>
     )
