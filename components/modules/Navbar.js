@@ -7,7 +7,7 @@ import NavbarMd from './NavbarMd';
 import { useSelector } from 'react-redux';
 
 function Navbar() {
-    const {itemsCounter} = useSelector(store => store.cart);
+    const { itemsCounter } = useSelector(store => store.cart);
 
     return (
         <div className='fixed top-0 right-0 left-0 w-full shadow-md z-50 bg-white'>
