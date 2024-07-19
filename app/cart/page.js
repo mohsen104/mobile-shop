@@ -67,7 +67,7 @@ function page() {
                 ))
               }
             </div>
-            <div className="col-span-2 flex flex-col border-1 border-gray rounded-lg h-fit sticky top-4 max-sm:col-span-1">
+            <div className="col-span-2 flex flex-col border-1 border-gray rounded-lg h-fit sticky top-24 max-sm:col-span-1">
               <div className='flex flex-col px-4 py-8 h-fit'>
                 <div className="flex flex-row items-center justify-between">
                   <p>تعداد کالا ها</p>
