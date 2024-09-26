@@ -1,4 +1,3 @@
-import AOSInit from "@/components/modules/Aos";
 import "./globals.css";
 import Footer from "@/components/modules/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -15,7 +14,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <AOSInit />
         <MyAppProvider>
           {children}
         </MyAppProvider>

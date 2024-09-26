@@ -27,33 +27,29 @@ export default function NavbarMd({ itemsCounter }) {
                     :
                     <IoClose onClick={closeMenu} size={28} className='cursor-pointer' />
             }
-            {
-                !menu && (
-                    <div className='fixed top-0 right-0 bottom-0 w-64 bg-white shadow-lg p-6'>
-                        <div className='flex flex-col items-start gap-4 font-medium text-black'>
-                            <div className='flex flex-row items-center gap-6 mr-2.5'>
-                                <Link href="/login" onClick={closeMenu}>
-                                    <MdOutlineAccountCircle size={20} />
-                                </Link>
-                                <span className='h-6 bg-gray w-[1px]'></span>
-                                <Link href="/cart" onClick={closeMenu} className='relative'>
-                                    <RiShoppingCartLine size={20} />
-                                    <p className="bg-red text-white text-center rounded-full border-1 border-white w-5 h-5 text-sm absolute -top-2 -right-2">{itemsCounter}</p>
-                                </Link>
-                            </div>
-                            <Link href="/" onClick={closeMenu} className='hover:text-red hover:bg-gray/50 w-full p-2.5 bg-white rounded-lg'>
-                                صفحه اصلی
-                            </Link>
-                            <Link href="/shop" onClick={closeMenu} className='hover:text-red hover:bg-gray/50 w-full p-2.5 bg-white rounded-lg'>
-                                فروشگاه
-                            </Link>
-                            <Link href="/aboutus" onClick={closeMenu} className='hover:text-red hover:bg-gray/50 w-full p-2.5 bg-white rounded-lg'>
-                                درباره ما
-                            </Link>
-                        </div>
+            <div className={`fixed top-0 ${menu ? "translate-x-full" : "translate-x-0"} right-0 bottom-0 w-64 bg-white shadow-lg p-6 transition-transform duration-300`}>
+                <div className='flex flex-col items-start gap-4 font-medium text-black'>
+                    <div className='flex flex-row items-center gap-6 mr-2.5'>
+                        <Link href="/login" onClick={closeMenu}>
+                            <MdOutlineAccountCircle size={20} />
+                        </Link>
+                        <span className='h-6 bg-gray w-[1px]'></span>
+                        <Link href="/cart" onClick={closeMenu} className='relative'>
+                            <RiShoppingCartLine size={20} />
+                            <p className="bg-red text-white text-center rounded-full border-1 border-white w-5 h-5 text-sm absolute -top-2 -right-2">{itemsCounter}</p>
+                        </Link>
                     </div>
-                )
-            }
+                    <Link href="/" onClick={closeMenu} className='hover:text-red hover:bg-gray/50 w-full p-2.5 bg-white rounded-lg'>
+                        صفحه اصلی
+                    </Link>
+                    <Link href="/shop" onClick={closeMenu} className='hover:text-red hover:bg-gray/50 w-full p-2.5 bg-white rounded-lg'>
+                        فروشگاه
+                    </Link>
+                    <Link href="/aboutus" onClick={closeMenu} className='hover:text-red hover:bg-gray/50 w-full p-2.5 bg-white rounded-lg'>
+                        درباره ما
+                    </Link>
+                </div>
+            </div>
         </div>
     )
 }

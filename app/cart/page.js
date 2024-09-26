@@ -51,7 +51,7 @@ function page() {
         items?.length == 0
           ?
           <div className="col-span-5 flex flex-row items-center justify-center max-sm:px-4 max-sm:flex-col">
-            <Image src="/images/cart.jpg" width={626} height={626} className="h-[50vh] w-fit" />
+            <Image src="/images/cart.jpg" width={626} height={626} className="h-[400px] w-fit" />
             <div className="mr-5 max-sm:mr-0 max-sm:mt-5 max-sm:items-center flex flex-col gap-2 items-start">
               <h1 className="font-medium text-xl">سبد خرید شما خالی میباشد!</h1>
               <Link href="/shop" className="border-b-1 border-b-blue text-blue text-sm">رفتن به فروشگاه</Link>

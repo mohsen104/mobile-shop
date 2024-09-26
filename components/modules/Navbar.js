@@ -35,7 +35,7 @@ function Navbar() {
                     <span className='h-6 bg-gray w-[1px]'></span>
                     <Link href="/cart" className='relative'>
                         <RiShoppingCartLine size={20} />
-                        <p className="bg-red text-white text-center rounded-full border-1 border-white w-5 h-5 text-sm absolute -top-2 -right-2">{itemsCounter}</p>
+                        {!!itemsCounter && <p className="bg-red text-white text-center rounded-full border-1 border-white w-5 h-5 text-sm absolute -top-2 -right-2">{itemsCounter}</p>}
                     </Link>
                 </div>
                 <NavbarMd itemsCounter={itemsCounter} />

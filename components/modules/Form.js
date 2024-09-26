@@ -1,8 +1,12 @@
 "use client"
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
+import { toast } from 'react-toastify';
 
 export default function Form() {
+  const notifyError = () => toast.error("کد تخفیف اشتباه میباشد .");
+  const notifySuccess = () => toast.success("ورود با موفقیت انجام شد .");
+
   const [form, setForm] = useState({
     email: "",
     password: ""
@@ -13,6 +17,7 @@ export default function Form() {
   const [showPass, setShowPass] = useState(false);
 
   async function registerHandler() {
+    notifySuccess();
     await fetch("/api/auth", {
       body: JSON.stringify(form),
       headers: {
@@ -24,7 +29,7 @@ export default function Form() {
   }
 
   return (
-    <div className="mr-5 flex flex-col gap-2 items-start w-96 border-gray border-1 rounded-md p-8">
+    <div className="flex flex-col gap-2 items-start w-96 border-gray border-1 rounded-md p-8 max-sm:w-80 max-sm:p-6">
       <h1 className="font-medium text-xl mb-4">ورود | ثبت نام</h1>
       {
         !showPass &&

@@ -27,8 +27,8 @@ function page({ params }) {
         <div className='container flex flex-col gap-8 max-sm:px-4'>
             <Breadcrump level={el.brand} />
             <div className='grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-6'>
-                <Image data-aos="zoom-in" alt="image" src={`/images/${el.id}.webp`} width={480} height={480} />
-                <div data-aos="zoom-in" className='flex flex-col gap-4'>
+                <Image alt="image" src={`/images/${el.id}.webp`} width={480} height={480} />
+                <div className='flex flex-col gap-4'>
                     <p className='leading-loose font-semibold'>{el.title}</p>
                     <div className='flex flex-row-reverse items-center text-yellow border-b-1 border-b-gray pb-4'>
                         {
@@ -65,7 +65,7 @@ function page({ params }) {
                         </div>
                     </div>
                 </div>
-                <div data-aos="zoom-in" className='flex flex-col gap-6 max-md:col-span-2 max-sm:col-span-1'>
+                <div className='flex flex-col gap-6 max-md:col-span-2 max-sm:col-span-1'>
                     <div className='flex flex-col rounded-lg bg-gray px-4 py-8 h-fit'>
                         <div className='flex flex-col items-start gap-2'>
                             <p className='font-bold text-lg'>فروشنده</p>

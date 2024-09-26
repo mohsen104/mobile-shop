@@ -1,6 +1,6 @@
 .mySwiper {
     width: 100%;
-    height: 50vh;
+    height: 400px;
 }
 
 .swiper-slide {
@@ -15,36 +15,35 @@
 .mySwiper .swiper-slide img {
     display: block;
     width: 100%;
-    height: 100%;
+    height: 400px;
     object-fit: cover;
 }
 
-@media not all and (min-width: 764px) {
+@media screen and (max-width:1280px) {
+    .mySwiper .swiper-slide img,
     .mySwiper {
-        width: 100%;
-        height: 40vw;
-    }
-
-    .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .mySwiper .swiper-slide img {
-        display: block;
-        object-position: 40%;
-        object-fit: cover;
+        height: 300px;
     }
 }
 
-@media not all and (min-width: 640px) {
-    .mySwiper .swiper-slide img {
-        display: block;
-        object-position: 35%;
-        object-fit: cover;
+@media screen and (max-width:1024px) {
+    .mySwiper .swiper-slide img,
+    .mySwiper {
+        height: 260px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .mySwiper .swiper-slide img,
+    .mySwiper {
+        height: 220px;
+    }
+}
+
+@media screen and (max-width:640px) {
+    .mySwiper .swiper-slide img,
+    .mySwiper {
+        object-position: center;
+        height: 120px;
     }
 }
