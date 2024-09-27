@@ -72,8 +72,8 @@ function InputSearch() {
 
     function searchFetch(q) {
         const closest = findClosestWord(q, correctWords);
-        setSuggestion(closest ? `شاید منظورتون "${closest}" بوده.` : '');
-        router.push(`/shop?${createQueryString("q", closest ?? q)}`);
+        setSuggestion(closest);
+        router.push(`/shop?${createQueryString("q", q)}`);
     }
 
     return (
@@ -88,7 +88,10 @@ function InputSearch() {
                     className='bg-gray focus:outline-none text-sm w-80'
                     placeholder='جستجو ...' />
             </div>
-            <p className="absolute -bottom-4 max-sm:-bottom-3 text-sm max-sm:text-xs">{suggestion}</p>
+            <p className="absolute -bottom-4 max-sm:-bottom-3 text-sm max-sm:text-xs">
+                {suggestion ? <>شاید منظورتون <span className="text-blue cursor-pointer border-b-1 border-blue" onClick={() => searchFetch(suggestion)}>"{suggestion}"</span> بوده.</> : ''}
+            </p>
+
         </div>
     )
 }
