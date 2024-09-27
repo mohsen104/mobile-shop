@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 
 async function page({ searchParams }) {
     let dataSorted = [...data];
-    
+
     switch (searchParams.sort) {
         case "0":
             dataSorted.sort((a, b) => a.id - b.id);
