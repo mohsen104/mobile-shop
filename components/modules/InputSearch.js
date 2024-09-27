@@ -84,7 +84,7 @@ function InputSearch() {
                     onKeyPress={(event) => searchHandler(event)}
                     onChange={(e) => setSearchValue(e.target?.value)}
                     value={searchValue}
-                    type="text"
+                    type="search"
                     className='bg-gray focus:outline-none text-sm w-80'
                     placeholder='جستجو ...' />
             </div>
