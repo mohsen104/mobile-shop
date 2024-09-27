@@ -44,13 +44,13 @@ export default function NavbarMd({ itemsCounter }) {
                             <p className="bg-red text-white text-center rounded-full border-1 border-white w-5 h-5 text-sm absolute -top-2 -right-2">{itemsCounter}</p>
                         </Link>
                     </div>
-                    <Link href="/" onClick={closeMenu} className={`${pathname === "/" && "text-red bg-gray/50"} w-full p-2.5 bg-white rounded-lg`}>
+                    <Link href="/" onClick={closeMenu} className={`${pathname === "/" ? "text-red bg-gray/50" : "text-black bg-white"} w-full p-2.5 rounded-lg`}>
                         صفحه اصلی
                     </Link>
-                    <Link href="/shop" onClick={closeMenu} className={`${pathname === "/shop" && "text-red bg-gray/50"} w-full p-2.5 bg-white rounded-lg`}>
+                    <Link href="/shop" onClick={closeMenu} className={`${pathname === "/shop" ? "text-red bg-gray/50" : "text-black bg-white"} w-full p-2.5 rounded-lg`}>
                         فروشگاه
                     </Link>
-                    <Link href="/aboutus" onClick={closeMenu} className={`${pathname === "/aboutus" && "text-red bg-gray/50"} w-full p-2.5 bg-white rounded-lg`}>
+                    <Link href="/aboutus" onClick={closeMenu} className={`${pathname === "/aboutus" ? "text-red bg-gray/50" : "text-black bg-white"} w-full p-2.5 rounded-lg`}>
                         درباره ما
                     </Link>
                 </div>
