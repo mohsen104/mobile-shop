@@ -77,8 +77,8 @@ function InputSearch() {
     }
 
     return (
-        <div className="flex flex-col pb-5 relative">
-            <div className='bg-gray px-2 py-2 rounded-md flex flex-row items-center gap-4 max-sm:w-full'>
+        <div className="flex flex-col pb-2 relative max-sm:w-full">
+            <div className='bg-gray px-2 py-2 rounded-md flex flex-row items-center gap-4'>
                 <IoSearch size={24} className='opacity-40 cursor-pointer' onClick={() => searchFetch(searchValue ? searchValue : "")} />
                 <input
                     onKeyPress={(event) => searchHandler(event)}
@@ -88,7 +88,7 @@ function InputSearch() {
                     className='bg-gray focus:outline-none text-sm w-80'
                     placeholder='جستجو ...' />
             </div>
-            <p className="absolute -bottom-2">{suggestion}</p>
+            <p className="absolute -bottom-4 max-sm:-bottom-3 text-sm max-sm:text-xs">{suggestion}</p>
         </div>
     )
 }

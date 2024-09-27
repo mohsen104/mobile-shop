@@ -7,16 +7,8 @@ import { AiOutlineProduct } from "react-icons/ai";
 import Link from 'next/link';
 import data from '@/data/mobile.json'
 
-export async function generateStaticProps() {
+export default function Home() {
   const dataFinal = data.sort((a, b) => b.rate - a.rate).slice(0, 8);
-  return {
-    props: {
-      dataFinal
-    }
-  }
-}
-
-export default async function Home({ dataFinal }) {
   return (
     <div className="container flex flex-col gap-6 max-sm:px-4 max-sm:gap-5">
       <Header />
@@ -29,7 +21,7 @@ export default async function Home({ dataFinal }) {
           </div>
           <Link href="/shop"><p className='text-blue'>مشاهده همه</p></Link>
         </div>
-        {dataFinal && <Products data={dataFinal} />}
+        <Products data={dataFinal} />
       </div>
       <Brands />
       <SamungBanners />

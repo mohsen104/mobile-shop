@@ -5,15 +5,6 @@ import Sort from '@/components/modules/Sort'
 import InputSearch from '@/components/modules/InputSearch';
 import data from '@/data/mobile.json'
 
-export async function generateStaticParams() {
-    return [
-        { sort: '0' },
-        { sort: '1' },
-        { sort: '2' },
-        { sort: '3' },
-    ];
-}
-
 async function page({ searchParams }) {
     let dataSorted = [...data];
 
