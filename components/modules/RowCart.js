@@ -19,11 +19,11 @@ function RowCart(props) {
                     <Link href={`/shop/${props.id}`}><Image alt="image" src={`/images/${props.id}.webp`} width={120} height={120} /></Link>
                     <div className="flex flex-col items-start text-sm w-full gap-1.5">
                         <Link href={`/shop/${props.id}`}><p className='leading-loose font-semibold line-clamp-2'>{props.title}</p></Link>
-                        <div className='flex flex-row items-center justify-between gap-3'>
+                        <div className='flex flex-row items-center justify-between gap-3 self-end w-full'>
                             {
                                 props.discount !== 0
                                     ?
-                                    <div className='bg-red flex flex-row items-center gap-1 rounded-full w-fit px-2 py-0.5 text-white'>
+                                    <div className='bg-red flex flex-row items-center gap-1 rounded-full w-fit px-2 py-0.5 text-white max-sm:rounded-lg'>
 
                                         <RiDiscountPercentLine size={20} />
                                         {props.discount}
@@ -31,7 +31,7 @@ function RowCart(props) {
                                     :
                                     <div></div>
                             }
-                            <div className='flex flex-row items-center justify-end gap-1 mt-2 font-semibold'>
+                            <div className='flex flex-row items-center justify-end gap-1 font-semibold'>
                                 {
                                     props.discount !== 0
                                         ?

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Error() {
+export default function NotFound() {
     return (
         <div className="flex flex-row items-center justify-center max-sm:px-4 max-sm:flex-col">
             <Image src="/images/not-found.avif" width={626} height={626} className="h-[400px] w-fit" />

@@ -7,9 +7,11 @@ import Link from 'next/link';
 
 function Product(props) {
     return (
-        <Link href={`/shop/${props.id}`} className='w-full flex flex-col items-center gap-2 p-4 transition-all hover:shadow-lg max-sm:p-2 max-sm:flex-row'>
-            <Image alt="image" src={`/images/${props.id}.webp`} width={240} height={240} className="max-sm:w-32 max-sm:h-32" />
-            <div className='flex flex-col gap-1 max-sm:gap-0'>
+        <Link href={`/shop/${props.id}`} className='w-full flex flex-col items-center gap-2 p-4 transition-all hover:shadow-lg max-sm:gap-1 max-sm:p-2 max-sm:flex-row'>
+            <div className="w-[240px] h-[240px] max-sm:w-28 max-sm:h-32 flex items-center">
+                <Image alt="image" src={`/images/${props.id}.webp`} width={240} height={240} className="object-contain h-full w-full"/>
+            </div>
+            <div className='flex flex-col flex-1 gap-1 max-sm:gap-0'>
                 <div className='bg-gray flex flex-row items-center gap-1 rounded-full w-fit px-2 py-0.5 max-sm:mb-1'>
                     <PiCaretDoubleUpBold className='text-green' />
                     <p className='text-[12px] text-black opacity-50 font-semibold'>ارسال رایگان</p>

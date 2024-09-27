@@ -7,6 +7,8 @@ import discount from '@/data/discount.json'
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
+import { Suspense } from 'react';
+import Loading from '@/components/modules/Loading';
 
 function page() {
   const notifyError = () => toast.error("کد تخفیف اشتباه میباشد .");
@@ -14,9 +16,9 @@ function page() {
 
   const { selectedItems, itemsCounter, totalPrice, totalDiscount } = useSelector(store => store.cart);
 
-  const [items, setItems] = useState(selectedItems);
-  const [totalCost, setTotalCost] = useState(totalPrice);
-  const [totalCostDiscount, setTotalCostDiscount] = useState(totalDiscount);
+  const [items, setItems] = useState();
+  const [totalCost, setTotalCost] = useState();
+  const [totalCostDiscount, setTotalCostDiscount] = useState();
 
   const [input, setInput] = useState();
 
@@ -44,6 +46,12 @@ function page() {
       notifyError();
     }
   }
+
+  if (!items) return (
+    <div className="container max-sm:px-4 grid place-items-center h-[400px]">
+      <Loading />
+    </div>
+  )
 
   return (
     <div className="container max-sm:px-4 grid grid-cols-5 gap-10 max-sm:grid-cols-1">

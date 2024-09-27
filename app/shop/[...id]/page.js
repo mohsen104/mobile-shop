@@ -9,9 +9,32 @@ import { BsShopWindow } from "react-icons/bs";
 import Products from '@/components/templates/Home/Products';
 import AddToCart from '@/components/modules/AddToCart';
 import data from '@/data/mobile.json'
+import NotFound from '@/app/not-found';
+
+export async function generateStaticParams() {
+    return [
+        { id: ['310251'] },
+        { id: ['310252'] },
+        { id: ['310253'] },
+        { id: ['310254'] },
+        { id: ['310255'] },
+        { id: ['410961'] },
+        { id: ['410962'] },
+        { id: ['410963'] },
+        { id: ['410964'] },
+        { id: ['410965'] },
+        { id: ['715001'] },
+        { id: ['715002'] },
+        { id: ['715003'] }
+    ];
+}
 
 export function generateMetadata({ params }) {
     const el = data.find((item) => item.id == params.id)
+    if (!el) return {
+        title: "موبایل شاپ",
+        description: "بزرگترین فروشگاه موبایل ایران",
+    }
     return {
         title: el.title,
         description: el.desc
@@ -20,9 +43,13 @@ export function generateMetadata({ params }) {
 
 function page({ params }) {
     const el = data.find((item) => item.id == params.id);
+
+    if (!el) return <NotFound />
+
     const dataRelation = data.filter((item) => {
         if (item.brand == el.brand && item.id != el.id) return item;
     })
+
     return (
         <div className='container flex flex-col gap-8 max-sm:px-4'>
             <Breadcrump level={el.brand} />

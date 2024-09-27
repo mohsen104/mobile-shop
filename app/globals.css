@@ -98,4 +98,8 @@ input {
   .text-sm {
     font-size: 12px;
   }
+
+  .Toastify__toast-container {
+    right: 0 !important;
+  }
 }

@@ -4,8 +4,10 @@ import React, { useState } from 'react'
 import { toast } from 'react-toastify';
 
 export default function Form() {
-  const notifyError = () => toast.error("کد تخفیف اشتباه میباشد .");
   const notifySuccess = () => toast.success("ورود با موفقیت انجام شد .");
+
+  const [isErrorEmail, setIsErrorEmail] = useState(false);
+  const [isErrorPassword, setIsErrorPassword] = useState(false);
 
   const [form, setForm] = useState({
     email: "",
@@ -17,15 +19,11 @@ export default function Form() {
   const [showPass, setShowPass] = useState(false);
 
   async function registerHandler() {
-    notifySuccess();
-    await fetch("/api/auth", {
-      body: JSON.stringify(form),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST"
-    })
-    router.replace("/");
+    if (form.password) {
+      notifySuccess();
+      router.replace("/");
+    }
+    setIsErrorPassword(true);
   }
 
   return (
@@ -45,19 +43,24 @@ export default function Form() {
       {
         !showPass ?
           <>
-            <input value={form.email} placeholder='ایمیل' onChange={(e) => setForm((form) => ({ ...form, email: e.target.value }))} required type="email" className='border-1 border-red bg-white rounded-md p-2 w-full focus:outline-none font-normal' />
-            <p className='text-[10px] text-red'>لطفا این قسمت را صحیح وارد نمایید</p>
+            <input value={form.email} placeholder='ایمیل' onChange={(e) => setForm((form) => ({ ...form, email: e.target.value }))} required type="email" className={`border-1 ${isErrorEmail ? "border-red" : "border-gray"} bg-white rounded-md p-2 w-full focus:outline-none font-normal`} />
+            <p className='text-[10px] text-red h-4'>{isErrorEmail && "لطفا این قسمت را صحیح وارد نمایید"}</p>
           </>
           :
           <>
-            <input value={form.password} placeholder='رمز عبور' onChange={(e) => setForm((form) => ({ ...form, password: e.target.value }))} required type="password" className='border-1 border-red bg-white rounded-md p-2 w-full focus:outline-none font-normal' />
-            <p className='text-[10px] text-red'>لطفا یک رمز عبور وارد نمایید</p>
+            <input value={form.password} placeholder='رمز عبور' onChange={(e) => setForm((form) => ({ ...form, password: e.target.value }))} required type="password" className={`border-1 ${isErrorPassword ? "border-red" : "border-gray"} bg-white rounded-md p-2 w-full focus:outline-none font-normal`} />
+            <p className='text-[10px] text-red h-4'>{isErrorPassword && "لطفا یک رمز عبور وارد نمایید"}</p>
           </>
       }
       {showPass ?
-        <button onClick={registerHandler} className='w-full rounded-lg bg-red text-white text-sm py-3 mt-8 mb-2'>تایید</button >
+        <button onClick={registerHandler} className='w-full rounded-lg bg-red text-white text-sm py-3 mt-6 mb-2'>تایید</button >
         :
-        <button onClick={() => setShowPass((state) => !state)} className='w-full rounded-lg bg-red text-white text-sm py-3 mt-8 mb-2'>ورود</button >
+        <button onClick={() => {
+          if (form.email) {
+            setShowPass((state) => !state);
+          }
+          setIsErrorEmail(true);
+        }} className='w-full rounded-lg bg-red text-white text-sm py-3 mt-6 mb-2'>ورود</button >
       }
       <p className='text-[10px] text-center'>
         ورود شما به معنای پذیرش شرایط موبایل‌شاپ و قوانین حریم ‌خصوصی است
