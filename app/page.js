@@ -5,10 +5,11 @@ import Products from "@/components/templates/Home/Products";
 import SectionBrands from "@/components/templates/Home/SectionBrands";
 import { AiOutlineProduct } from "react-icons/ai";
 import Link from 'next/link';
-import data from '@/data/mobile.json'
 
-export default function Home() {
-  const dataFinal = data.sort((a, b) => b.rate - a.rate).slice(0, 8);
+export default async function Home() {
+  const res = await fetch(process.env.PUBLIC_URL);
+  const data = await res.json();
+  const dataFinal = data.data.sort((a, b) => b.rate - a.rate).slice(0, 8);
   return (
     <div className="container flex flex-col gap-6 max-sm:px-4 max-sm:gap-5">
       <Header />

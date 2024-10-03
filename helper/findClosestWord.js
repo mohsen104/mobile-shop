@@ -26,13 +26,11 @@ const levenshtein = (a, b) => {
     return matrix[b.length][a.length];
 }
 
-// تابع محاسبه درصد شباهت
 const similarity = (a, b) => {
     const maxLength = Math.max(a.length, b.length);
     const distance = levenshtein(a, b);
     return (1 - distance / maxLength) * 100;
 }
-
 
 const findClosestWord = (input, words) => {
     let closestWord = '';
@@ -50,9 +48,8 @@ const findClosestWord = (input, words) => {
         }
     });
 
-    // شرط برای برگرداندن رشته خالی در صورت شباهت کم
-    if (highestSimilarity < 50) { // مثلاً اگر شباهت کمتر از 50 درصد بود
-        return null; // رشته خالی برمی‌گرداند
+    if (highestSimilarity < 50) {
+        return null;
     }
 
     return closestWord;

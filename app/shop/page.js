@@ -3,10 +3,12 @@ import Products from '@/components/templates/Home/Products'
 import React from 'react'
 import Sort from '@/components/modules/Sort'
 import InputSearch from '@/components/modules/InputSearch';
-import data from '@/data/mobile.json'
 
 async function page({ searchParams }) {
-    let dataSorted = [...data];
+    const res = await fetch(process.env.PUBLIC_URL);
+    const data = await res.json();
+
+    let dataSorted = [...data.data];
 
     switch (searchParams.sort) {
         case "0":
