@@ -5,10 +5,10 @@ import Sort from '@/components/modules/Sort'
 import InputSearch from '@/components/modules/InputSearch';
 
 async function page({ searchParams }) {
-    const res = await fetch(process.env.PUBLIC_URL);
+    const res = await fetch(process.env.PUBLIC_URL + "/api");
     const data = await res.json();
 
-    let dataSorted = [...data.data];
+    let dataSorted = [...data];
 
     switch (searchParams.sort) {
         case "0":
