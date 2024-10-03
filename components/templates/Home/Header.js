@@ -10,7 +10,7 @@ import Image from 'next/image';
 function Header() {
     return (
         <Swiper
-            lazy={true}
+            lazy="true"
             style={{
                 "--swiper-pagination-bullet-width": "8px",
                 "--swiper-pagination-bullet-height": "8px",

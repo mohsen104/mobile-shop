@@ -17,7 +17,7 @@ function Brands() {
                 </div>
             </div>
             <Swiper
-                lazy={true}
+                lazy="true"
                 slidesPerView={4}
                 loop={true}
                 spaceBetween={35}
