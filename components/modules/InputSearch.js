@@ -72,7 +72,11 @@ function InputSearch() {
 
     function searchFetch(q) {
         const closest = findClosestWord(q, correctWords);
-        setSuggestion(closest);
+        if (closest == q) {
+            setSuggestion("");
+        } else {
+            setSuggestion(closest);
+        }
         router.push(`/shop?${createQueryString("q", q)}`);
     }
 
