@@ -8,7 +8,7 @@ async function page({ searchParams }) {
     const res = await fetch(process.env.PUBLIC_URL + "/api");
     const data = await res.json();
 
-    let dataSorted = data;
+    let dataSorted = data.data;
 
     switch (searchParams.sort) {
         case "0":
