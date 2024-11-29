@@ -1,0 +1,5 @@
+# فایل‌های جاوا اسکریپت
+*.js linguist-language=JavaScript
+
+# فایل‌های استایل‌دهی
+*.css linguist-language=CSS
