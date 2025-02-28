@@ -19,7 +19,8 @@ export default function Form() {
   const [showPass, setShowPass] = useState(false);
 
   async function registerHandler() {
-    if (form.password) {
+    const regex = new RegExp(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/);
+    if (regex.test(form.password)) {
       notifySuccess();
       router.replace("/");
     }
@@ -56,7 +57,8 @@ export default function Form() {
         <button onClick={registerHandler} className='w-full rounded-lg bg-red text-white text-sm py-3 mt-6 mb-2'>تایید</button >
         :
         <button onClick={() => {
-          if (form.email) {
+          const regex = new RegExp(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/);
+          if (regex.test(form.email)) {
             setShowPass((state) => !state);
           }
           setIsErrorEmail(true);
